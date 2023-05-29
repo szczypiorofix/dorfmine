@@ -1,12 +1,14 @@
-import React from 'react';
 
 
 export const MainMenu = () => {
 
-
-
     return <div>
-        MainMenu
+        <h2>MAIN MENU</h2>
+        <div>
+            <button>START</button>
+            <button>SETTINGS</button>
+            <button>HELP</button>
+        </div>
     </div>
 }
 
