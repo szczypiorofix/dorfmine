@@ -40,7 +40,7 @@ const App = () => {
 			<div className="flex space-x-4 mb-6 text-sm font-medium">
 				<div className="flex-auto flex space-x-4">
 					<button
-						className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
+						className="h-10 px-6 font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-md border border-slate-200"
 						type="button"
 						aria-label="Switch to Splash Screen"
 						onClick={() => dispatch( switchView( APP_STATE_VIEW.SPLASH ) )}
@@ -48,7 +48,7 @@ const App = () => {
 						Splash Screen
 					</button>
 					<button
-						className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
+						className="h-10 px-6 font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-md border border-slate-200"
 						type="button"
 						aria-label="Switch to Main Menu"
 						onClick={() => dispatch( switchView( APP_STATE_VIEW.MAIN_MENU ) )}
@@ -56,7 +56,7 @@ const App = () => {
 						Main Menu
 					</button>
 					<button
-						className="h-10 px-6 font-semibold rounded-md border border-slate-200 text-slate-900"
+						className="h-10 px-6 font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-md border border-slate-200"
 						type="button"
 						aria-label="Switch to Main Menu"
 						onClick={() => dispatch( switchView( APP_STATE_VIEW.SETTINGS ) )}
