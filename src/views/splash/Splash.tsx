@@ -14,7 +14,7 @@ export const Splash = () => {
         }, 500);
     }, [ dispatch ]);
 
-    return <div>
+    return <div className="flex-initial w-64">
         SPLASH SCREEN
     </div>
 
