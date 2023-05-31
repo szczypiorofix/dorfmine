@@ -1,12 +1,19 @@
 
-export abstract class Item {
+import { v4 } from 'uuid';
+
+
+export class Item {
 
     public ID: number;
-    public name: string;
+    public Name: string;
+    public Hash: string;
 
-    constructor(_ID: number, _name: string = "item") {
+
+    constructor(_ID: number, _name: string = "generic item") {
         this.ID = _ID;
-        this.name = _name;
+        this.Name = _name;
+        this.Hash = v4();
     }
+
 
 }

@@ -1,13 +1,17 @@
 import { Item } from "./Item";
+import { ITEM_TYPES } from "./ItemTypes";
 
 
 
-export abstract class Weapon extends Item {
+export class Weapon extends Item {
 
+    public itemType: ITEM_TYPES;
 
+    constructor( _ID: number ) {
+        super(_ID);
+        this.itemType = ITEM_TYPES.WEAPON;
+    }
     
-    
-
 }
 
 
