@@ -64,14 +64,14 @@ class ItemGenerator {
     private static addRandomPropertiesToItem<T extends Item>( item: T ) : T {
         
         if ( item instanceof Weapon ) {
-            console.log("it's a weapon!");
             item = ItemGenerator.addRandorPropertiesToWeapon(item);
         }
 
         if ( item instanceof Armor ) {
-            console.log("it's an armor!");
             item = ItemGenerator.addRandorPropertiesToArmor(item);
         }
+
+        console.log("[ITEM]: ", item)
 
         return item;
     }

@@ -1,8 +1,13 @@
-import { Armor, Item, Weapon } from "../../core/entities/items";
+import { Armor, Weapon } from "../../core/entities/items";
 
 
 
 export interface IGeneratorsState {
-    randomItem: null | Item | Armor | Weapon;
+    randomItem: null |  Armor | Weapon;
+}
+
+
+export interface IRandomItemType {
+    item: Armor | Weapon;
 }
 

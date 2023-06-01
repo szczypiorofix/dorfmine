@@ -2,7 +2,6 @@ import { v4 } from 'uuid';
 
 
 export enum ITEM_TYPE {
-    GENERIC,
     WEAPON,
     ARMOR 
 }
@@ -10,11 +9,13 @@ export enum ITEM_TYPE {
 
 
 
-export class Item {
+export abstract class Item {
 
     public ID: number;
     public Name: string;
     public Hash: string;
+    public level: number;
+    public cost: number;
     public itemType: ITEM_TYPE;
 
     constructor() {
@@ -22,6 +23,8 @@ export class Item {
         this.Name = "item";
         this.Hash = v4();
         this.itemType = ITEM_TYPE.WEAPON;
+        this.level = 1;
+        this.cost = 0;
     }
 
 

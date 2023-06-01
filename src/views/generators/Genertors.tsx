@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IGeneratorsState } from "./Generators.model";
 import ItemGenerator from "./ItemGenerator";
-import { Item, Armor, Weapon, ITEM_TYPE } from "../../core/entities/items";
+import { Armor, Weapon, ITEM_TYPE } from "../../core/entities/items";
 
 
 
@@ -18,14 +18,11 @@ export const Generators = () => {
         
         switch( randomItemType ) {
             case ITEM_TYPE.ARMOR:
-                item = ItemGenerator.generateItem(Item);
-                break;
-            case ITEM_TYPE.WEAPON:
-                item = ItemGenerator.generateItem(Weapon);
+                item = ItemGenerator.generateItem(Armor);
                 break;
             default:
-                // 0 - generic item
-                item = ItemGenerator.generateItem(Armor);
+                item = ItemGenerator.generateItem(Weapon);
+                break;
         }
         
         setState({
@@ -60,7 +57,7 @@ export const Generators = () => {
         return (
             <div className="flex flex-col flex-auto basis-0 justify-center">
                 <h1>STATYSTYKI PRZEDMIOTU:</h1>
-                <h2>Nazaw: {state.randomItem.Name}</h2>
+                <h2>Nazwa: {state.randomItem.Name}</h2>
                 <h3>ID: {state.randomItem.ID}</h3>
                 <h3>Hash: {state.randomItem.Hash}</h3>
                 <h3>Typ: {state.randomItem.itemType}</h3>
