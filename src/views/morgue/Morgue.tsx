@@ -5,6 +5,6 @@ export const Morgue = () => {
 
 
     return <div>
-        MORGUE
+        KOSTNICA ?!
     </div>
 }

@@ -56,7 +56,7 @@ const App = () => {
 						aria-label="Switch to Main Menu"
 						onClick={() => dispatch( switchView( APP_STATE_VIEW.MAIN_MENU ) )}
 					>
-						Main Menu
+						Menu główne
 					</button>
 				</div>
 			</div>

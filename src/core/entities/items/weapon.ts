@@ -1,15 +1,26 @@
-import { Item } from "./Item";
-import { ITEM_TYPES } from "./ItemTypes";
+import { ITEM_TYPE, Item } from "./Item";
 
+
+export interface IWeaponDamage {
+    min: number;
+    max: number;
+}
 
 
 export class Weapon extends Item {
 
-    public itemType: ITEM_TYPES;
+    public damage: IWeaponDamage;
+    public requiredStr: number;
 
-    constructor( _ID: number ) {
-        super(_ID);
-        this.itemType = ITEM_TYPES.WEAPON;
+
+    constructor() {
+        super();
+        this.itemType = ITEM_TYPE.WEAPON;
+        this.damage = {
+            min: 0,
+            max: 0
+        };
+        this.requiredStr = 0;
     }
     
 }
