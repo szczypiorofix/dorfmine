@@ -8,15 +8,15 @@ export enum ITEM_TYPE {
 
 
 
-
 export abstract class Item {
 
     public ID: number;
     public Name: string;
     public Hash: string;
     public level: number;
-    public cost: number;
+    public price: number;
     public itemType: ITEM_TYPE;
+
 
     constructor() {
         this.ID = 0;
@@ -24,7 +24,7 @@ export abstract class Item {
         this.Hash = v4();
         this.itemType = ITEM_TYPE.WEAPON;
         this.level = 1;
-        this.cost = 0;
+        this.price = 0;
     }
 
 

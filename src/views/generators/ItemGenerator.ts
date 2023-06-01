@@ -1,15 +1,25 @@
-import { Armor, IWeaponDamage, Item, Weapon } from "../../core/entities/items";
+import { Armor, IWeaponDamage, Weapon } from "../../core/entities/items";
 import { WEAPON_MAJOR_TERMS, WEAPON_MINOR_TERMS, WEAPON_NAMES } from "./DefinedNames";
 
 
 
 class ItemGenerator {
 
+    public static generateNewWeapon = (): Weapon => {
+        let weapon = new Weapon();
+        weapon = ItemGenerator.addRandorPropertiesToWeapon( weapon );
+        return weapon;
+    }
+
+    public static generateNewArmor = (): Armor => {
+        let armor = new Armor();
+        armor = ItemGenerator.addRandorPropertiesToArmor( armor );
+        return armor;
+    }
+
 
     // WEAPON
-
-    private static weaponNameGenerator<T extends Weapon>( weapon: T ): string {
-
+    private static weaponNameGenerator( weapon: Weapon ): string {
         // TODO: depending on weapon damage the names would change
 
         const weaponType = Math.floor( Math.random() * ( Object.keys(WEAPON_NAMES).length ) );
@@ -25,7 +35,7 @@ class ItemGenerator {
     }
 
 
-    private static weaponDamageGenerator<T extends Weapon>( weapon: T ): IWeaponDamage {
+    private static weaponDamageGenerator( weapon: Weapon ): IWeaponDamage {
         let damageMin = Math.floor( Math.random() * 8 );
         let damageMax = damageMin + Math.floor( Math.random() * 10 );
         return {min: damageMin, max: damageMax};
@@ -34,51 +44,25 @@ class ItemGenerator {
 
 
     // ARMOR
-
-    private static armorNameGenerator<T extends Armor>( armor: T ): string {
+    private static armorNameGenerator( armor: Armor ): string {
         let name = armor.Name;
-
         return name;
     }
 
 
-    private static addRandorPropertiesToWeapon<T extends Weapon>( weapon: T ) : T  {
+    private static addRandorPropertiesToWeapon( weapon: Weapon ): Weapon  {
         weapon.damage = ItemGenerator.weaponDamageGenerator( weapon );
         weapon.requiredStr = 6;
         weapon.Name = ItemGenerator.weaponNameGenerator(weapon);
-
         return weapon;
     }
 
 
-    private static addRandorPropertiesToArmor<T extends Armor>( armor: T ) : T  {
+    private static addRandorPropertiesToArmor( armor: Armor ) : Armor  {
         armor.armorClass = 4;
         armor.requiredStr = 6;
-
         armor.Name = ItemGenerator.armorNameGenerator(armor);
-
         return armor;
-    }
-
-
-    private static addRandomPropertiesToItem<T extends Item>( item: T ) : T {
-        
-        if ( item instanceof Weapon ) {
-            item = ItemGenerator.addRandorPropertiesToWeapon(item);
-        }
-
-        if ( item instanceof Armor ) {
-            item = ItemGenerator.addRandorPropertiesToArmor(item);
-        }
-
-        console.log("[ITEM]: ", item)
-
-        return item;
-    }
-
-    public static generateItem<T extends Item>(Class: new() => T): T {
-        const item = new Class();
-        return ItemGenerator.addRandomPropertiesToItem( item );
     }
 
 }
