@@ -47,7 +47,7 @@ const App = () => {
 	}
 
 	return (
-		<div className="h-screen text-white bg-blue-950" data-testid="app-test-id">
+		<div className="h-screen text-white bg-blue-950 p-6" data-testid="app-test-id">
 			<div className="flex space-x-4 mb-6 pt-6 text-sm font-medium">
 				<div className="flex-auto flex space-x-4">
 					<button
