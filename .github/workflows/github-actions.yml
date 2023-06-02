@@ -1,0 +1,11 @@
+name: Dorfmine build and deployment actions
+on:
+    push:
+      branches:
+        - master  
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Starting GH action!"
+            - run: yarn
