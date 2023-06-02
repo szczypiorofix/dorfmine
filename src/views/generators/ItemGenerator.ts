@@ -1,5 +1,5 @@
 import { Armor, IWeaponDamage, Weapon } from "../../core/entities/items";
-import { WEAPON_MAJOR_TERMS, WEAPON_MINOR_TERMS, WEAPON_NAMES } from "./DefinedNames";
+import { ARMOR_MINOR_TERMS, ARMOR_NAMES, WEAPON_MAJOR_TERMS, WEAPON_MINOR_TERMS, WEAPON_NAMES } from "./DefinedNames";
 
 
 
@@ -23,7 +23,7 @@ class ItemGenerator {
         // TODO: depending on weapon damage the names would change
 
         const weaponType = Math.floor( Math.random() * ( Object.keys(WEAPON_NAMES).length ) );
-        const weaponTypeName = Object.values(WEAPON_NAMES)[weaponType] as string;
+        const weaponTypeName = Object.values(WEAPON_NAMES)[weaponType];
         
         const weaponMajorTyoe = Math.floor( Math.random() * ( Object.keys(WEAPON_MAJOR_TERMS).length ) );
         const weaponMajorTypeName = Object.values(WEAPON_MAJOR_TERMS)[weaponMajorTyoe];
@@ -45,8 +45,13 @@ class ItemGenerator {
 
     // ARMOR
     private static armorNameGenerator( armor: Armor ): string {
-        let name = armor.Name;
-        return name;
+        const armorType = Math.floor( Math.random() * ( Object.keys(ARMOR_NAMES).length ) );
+        const armorTypeName = Object.values(ARMOR_NAMES)[armorType] as string;
+
+        const armorMinorTyoe = Math.floor( Math.random() * ( Object.keys(ARMOR_MINOR_TERMS).length ) );
+        const armorMinorTypeName = Object.values(ARMOR_MINOR_TERMS)[armorMinorTyoe];
+
+        return `${armorMinorTypeName} ${armorTypeName}`;
     }
 
 
