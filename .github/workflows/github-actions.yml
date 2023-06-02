@@ -9,3 +9,5 @@ jobs:
         steps:
             - run: echo "Starting GH action!"
             - run: yarn
+            - run: yarn test
+            
