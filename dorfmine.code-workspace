@@ -21,5 +21,10 @@
 			"**/.DS_Store": true,
 			"**/node_modules": true
 		}
+	},
+	"extensions": {
+		"recommendations": [
+			"github.vscode-github-actions"
+		]
 	}
 }
