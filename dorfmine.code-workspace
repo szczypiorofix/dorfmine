@@ -10,6 +10,7 @@
 		"editor.fontLigatures": true,
 		"editor.mouseWheelZoom": true,
 		"editor.cursorWidth": 8,
+		"editor.tabSize": 4,
 		"editor.cursorBlinking": "phase",
 		"files.autoGuessEncoding": false,
 		"files.encoding": "utf8",

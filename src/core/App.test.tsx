@@ -4,7 +4,9 @@ import App from './App';
 
 
 test('renders App main component', () => {
-  render(<App />);
-  const appElement = screen.getByTestId('app-test-id');
-  expect(appElement).toBeInTheDocument();
+    render(<App />);
+    const appElement = screen.getByTestId('app-test-id');
+    expect(appElement).toBeInTheDocument();
+    expect(appElement).toBeValid();
+    expect(appElement).toBeVisible();
 });
