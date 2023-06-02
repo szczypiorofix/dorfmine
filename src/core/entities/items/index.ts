@@ -1,3 +1,3 @@
 export * from './Item';
-export * from './Weapon1';
+export * from './Weapon';
 export * from "./Armor";
