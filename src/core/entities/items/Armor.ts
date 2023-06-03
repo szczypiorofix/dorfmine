@@ -14,5 +14,6 @@ export class Armor extends Item {
         this.requiredStr = 0;
         this.armorClass = 0;
     }
+
     
 }

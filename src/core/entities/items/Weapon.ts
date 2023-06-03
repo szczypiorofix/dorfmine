@@ -23,4 +23,5 @@ export class Weapon extends Item {
         this.requiredStr = 0;
     }
     
+
 }
