@@ -4,20 +4,7 @@ import ItemGenerator from "./ItemGenerator";
 import { Armor, Weapon, ITEM_TYPE } from "../../core/entities/items";
 
 
-
 export const Generators = () => {
-
-    const items_swords: string[] = [
-        "sharp_blade_t.png",
-        "swords_t_01.png",
-        "swords_t_02.png",
-        "swords_t_03.png",
-        "swords_t_04.png",
-        "swords_t_05.png",
-        "swords_t_06.png",
-        "swords_t_07.png",
-        "swords_t_08.png"
-    ];
 
     const [state, setState ] = useState<IGeneratorsState>({
         randomItem: null
@@ -50,6 +37,7 @@ export const Generators = () => {
 
         if ( state.randomItem instanceof Weapon) {
             return <div>
+                <h2>Rodzaj broni: { state.randomItem.weaponType }</h2>
                 <h2>Obrażenia: { state.randomItem.damage.min } - { state.randomItem.damage.max }</h2>
                 <h2>Wymagana Siła: { state.randomItem.requiredStr }</h2>
             </div>
@@ -64,15 +52,6 @@ export const Generators = () => {
     }
 
 
-    const getRandomItemPath = (): string => {
-        const rndImage = Math.floor( Math.random() * items_swords.length );
-        if (!items_swords[rndImage]) {
-            throw Error("Wrong image index!");
-        }
-        return items_swords[rndImage];
-    }
-
-
     const itemPresenation = () => {
         if ( !state.randomItem ) {
             return <div></div>
@@ -80,7 +59,7 @@ export const Generators = () => {
         return (
             <div className="flex flex-col flex-auto basis-0 justify-center">
                 <div className="flex justify-center my-4">
-                    <img src={ "./assets/images/items/swords/" + getRandomItemPath() } alt="sword icon" className="w-24" />
+                    <img src={ "./assets/images/items/" + state.randomItem.imagePath } alt={ ITEM_TYPE[state.randomItem.itemType] + " icon" } className="w-24" />
                 </div>
                 <h1>STATYSTYKI PRZEDMIOTU:</h1>
                 <h2>Nazwa: { state.randomItem.Name }</h2>
