@@ -10,6 +10,7 @@
 		"editor.fontLigatures": true,
 		"editor.mouseWheelZoom": true,
 		"editor.cursorWidth": 8,
+		"editor.tabSize": 4,
 		"editor.cursorBlinking": "phase",
 		"files.autoGuessEncoding": false,
 		"files.encoding": "utf8",
@@ -24,7 +25,15 @@
 	},
 	"extensions": {
 		"recommendations": [
-			"github.vscode-github-actions"
+			"github.vscode-github-actions",
+			"formulahendry.auto-rename-tag",
+			"aaron-bond.better-comments",
+			"adpyke.codesnap",
+			"dsznajder.es7-react-js-snippets",
+			"donjayamanne.githistory",
+			"dbaeumer.vscode-eslint",
+			"esbenp.prettier-vscode",
+			"pkief.material-icon-theme"
 		]
 	}
 }
