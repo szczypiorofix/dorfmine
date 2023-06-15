@@ -7,13 +7,13 @@ import { Armor, Weapon, ITEM_TYPE } from "../../core/entities/items";
 export const Generators = () => {
 
     const [state, setState ] = useState<IGeneratorsState>({
-        randomItem: null
+        
     });
 
     const generate = () => {
         const randomItemType = Math.floor(Math.random() * ( Object.keys(ITEM_TYPE).length / 2) );
         let item = null;
-        
+
         switch( randomItemType ) {
             case ITEM_TYPE.ARMOR:
                 item = ItemGenerator.generateNewArmor();
@@ -82,7 +82,7 @@ export const Generators = () => {
                     onClick={generate}
                 >WYGENERUJ !</button>
             </div>
-            <div className="flex flex-col mx-auto m-5 space-y-4 font-mono text-white text-sm font-bold leading-6 max-w-md bg-blue-900 p-5 rounded-md min-h-full">
+            <div className={ `flex flex-col mx-auto space-y-4 font-mono text-white text-sm font-bold leading-6 max-w-md bg-blue-900 rounded-md min-h-full` + ( state.randomItem ? ` m-5 p-5` : `` ) }>
                 {state.randomItem && itemPresenation() }
             </div>
 		</div>

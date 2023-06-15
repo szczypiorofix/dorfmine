@@ -6,7 +6,6 @@ export class Armor extends Item {
 
     public requiredStr: number;
     public armorClass: number;
-
     
     constructor() {
         super();
@@ -15,5 +14,4 @@ export class Armor extends Item {
         this.armorClass = 0;
     }
 
-    
 }

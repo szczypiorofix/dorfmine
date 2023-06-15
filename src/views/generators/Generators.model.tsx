@@ -3,7 +3,7 @@ import { Armor, Weapon } from "../../core/entities/items";
 
 
 export interface IGeneratorsState {
-    randomItem: null |  Armor | Weapon;
+    randomItem?: Armor | Weapon;
 }
 
 
