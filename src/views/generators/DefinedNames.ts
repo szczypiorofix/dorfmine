@@ -10,7 +10,6 @@ export enum WEAPON_NAMES {
     BOW = "Łuk"
 }
 
-
 export enum WEAPON_MAJOR_TERMS {
     VILE = "Złośliwy",
     CRUEL = "Okrutny",
@@ -36,8 +35,6 @@ export enum ARMOR_NAMES {
     BOOTS = "Buty",
     SHIELD = "Tarcza"
 }
-
-
 
 export enum ARMOR_MINOR_TERMS {
     RESIST_FIRE = "Ognioodporny",

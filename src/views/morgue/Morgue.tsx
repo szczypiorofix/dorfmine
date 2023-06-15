@@ -3,8 +3,7 @@ import React from "react";
 
 export const Morgue = () => {
 
-
     return <div>
-        KOSTNICA ?!
+        MORGUE ?!
     </div>
 }

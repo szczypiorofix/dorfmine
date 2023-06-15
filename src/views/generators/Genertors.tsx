@@ -6,9 +6,7 @@ import { Armor, Weapon, ITEM_TYPE } from "../../core/entities/items";
 
 export const Generators = () => {
 
-    const [state, setState ] = useState<IGeneratorsState>({
-        
-    });
+    const [state, setState ] = useState<IGeneratorsState>({ });
 
     const generate = () => {
         const randomItemType = Math.floor(Math.random() * ( Object.keys(ITEM_TYPE).length / 2) );

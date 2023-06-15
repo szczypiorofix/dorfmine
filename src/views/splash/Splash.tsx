@@ -15,7 +15,7 @@ export const Splash = () => {
     }, [ dispatch ]);
 
     return <div className="flex-initial w-64">
-        ŁADOWANIE ...
+        LOADING ...
     </div>
 
 }
