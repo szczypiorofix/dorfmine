@@ -1,6 +1,5 @@
-import { Armor, IWeaponDamage, WEAPON_TYPE, Weapon } from "../../core/entities/items";
-import { ARMOR_MINOR_TERMS, ARMOR_NAMES, WEAPON_MAJOR_TERMS, WEAPON_MINOR_TERMS, WEAPON_NAMES } from "./DefinedNames";
-
+import { Armor, WEAPON_TYPE, Weapon } from "../../core/entities/items";
+import { WEAPON_MAJOR_TERMS, WEAPON_MINOR_TERMS, WEAPON_NAMES } from "./DefinedNames";
 
 
 class ItemGenerator {
@@ -16,36 +15,20 @@ class ItemGenerator {
         return armor;
     }
 
-
-
-    // WEAPON
     public static generateNewWeapon = (): Weapon => {
         return ItemGenerator.addRandomPropertiesToWeapon( new Weapon() );
     }
 
     private static addRandomPropertiesToWeapon( weapon: Weapon ): Weapon  {
-
         weapon.imagePath = "/swords/sharp_blade_t.png";
-
         // TODO: modify weapon stats...
-
-        // * just some comments here...
-
         return weapon;
     }
-
-
-
-
-
-
-
     
     private static weaponTypeGenerator( weapon: Weapon ): Weapon {
         const weaponType = Math.floor( Math.random() * ( Object.keys(WEAPON_TYPE).length  / 2) );
         switch(weaponType) {
             case WEAPON_TYPE.ARROWS:
-                
                 break;
             default:
                 break;
@@ -75,36 +58,6 @@ class ItemGenerator {
 
         return `${weaponMinorTypeName}  ${weaponMajorTypeName}  ${weaponTypeName}`;
     }
-
-    // private static addRandomPropertiesToWeapon( weapon: Weapon ): Weapon  {
-
-    //     weapon.weaponType = ItemGenerator.weaponTypeGenerator( weapon );
-    //     weapon.damage = ItemGenerator.weaponDamageGenerator( weapon );
-    //     weapon.requiredStr = 6;
-    //     weapon.Name = ItemGenerator.weaponNameGenerator(weapon);
-
-    //     return weapon;
-    // }
-
-
-
-    // ARMOR
-    // private static armorNameGenerator( armor: Armor ): string {
-    //     const armorType = Math.floor( Math.random() * ( Object.keys(ARMOR_NAMES).length ) );
-    //     const armorTypeName = Object.values(ARMOR_NAMES)[armorType] as string;
-
-    //     const armorMinorTyoe = Math.floor( Math.random() * ( Object.keys(ARMOR_MINOR_TERMS).length ) );
-    //     const armorMinorTypeName = Object.values(ARMOR_MINOR_TERMS)[armorMinorTyoe];
-
-    //     return `${armorMinorTypeName} ${armorTypeName}`;
-    // }
-
-    // private static addRandorPropertiesToArmor( armor: Armor ) : Armor  {
-    //     armor.armorClass = 4;
-    //     armor.requiredStr = 6;
-    //     armor.Name = ItemGenerator.armorNameGenerator(armor);
-    //     return armor;
-    // }
 
 }
 
