@@ -11,11 +11,11 @@ export const Splash = () => {
     useEffect( () => {
         setTimeout(() => {
             dispatch( switchView( APP_STATE_VIEW.MAIN_MENU ) ); // loading delay
-        }, 500);
+        }, 250);
     }, [ dispatch ]);
 
-    return <div className="flex-initial w-64">
-        LOADING ...
+    return <div className="my-6">
+        <h1 className="text-center py-6 text-3xl">LOADING ...</h1>
     </div>
 
 }

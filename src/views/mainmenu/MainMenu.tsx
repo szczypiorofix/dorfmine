@@ -8,7 +8,9 @@ export const MainMenu = () => {
     const dispatch = useDispatch();
 
     return <div className="text-white bg-blue-950 box-border">
-        <h2>MAIN MENU</h2>
+        <div>
+            <h1 className="text-center py-6 text-3xl">MAIN MENU</h1>
+        </div>
         <div className="flex flex-col mx-auto space-y-4 font-mono text-white text-sm font-bold leading-6 max-w-xs">
             <button
                 className="p-3 rounded-lg flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 shadow-lg border border-slate-200"

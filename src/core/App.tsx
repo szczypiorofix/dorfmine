@@ -29,7 +29,9 @@ const App = () => {
 				)
 			case APP_STATE_VIEW.GAME:
 				return (
-					<Game />
+					<Game
+						run={ true }
+					/>
 				)
 			case APP_STATE_VIEW.MORGUE:
 				return (
