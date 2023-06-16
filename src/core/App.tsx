@@ -16,7 +16,6 @@ const App = () => {
 	const view = useSelector((state: RootState) => state.gameState.view );
 	const dispatch = useDispatch();
 
-
 	const viewResolver = () => {
 		switch ( view ) {
 			case APP_STATE_VIEW.MAIN_MENU:
@@ -29,9 +28,7 @@ const App = () => {
 				)
 			case APP_STATE_VIEW.GAME:
 				return (
-					<Game
-						run={ true }
-					/>
+					<Game />
 				)
 			case APP_STATE_VIEW.MORGUE:
 				return (

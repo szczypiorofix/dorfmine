@@ -1,30 +1,38 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React from 'react';
+import {GAME_TILE_TYPE} from "../views/game/Game.model";
+
 
 interface WorldTileProps {
+    id: number;
     text: string;
-}
-
-interface WorldTileState {
+    type: GAME_TILE_TYPE;
     selected: boolean;
+    setSelected: (id: number) => void;
 }
 
 const WorldTile = ( props: WorldTileProps ) => {
 
-    const [state, setState] = useState<WorldTileState>({
-        selected: false
-    });
-
-    const callback = useCallback( () => {
-        console.log('useCallback');
-    }, []);
+    const resolveImage = () => {
+        switch( props.type ) {
+            case GAME_TILE_TYPE.DIRT:
+                return <img className="w-full" src={ './assets/images/world/dirt.png' } alt={"Tile"} />
+            case GAME_TILE_TYPE.COBBLE:
+                return <img className="w-full" src={ './assets/images/world/cobble.png' } alt={"Tile"} />
+            case GAME_TILE_TYPE.WATER:
+                return <img className="w-full" src={ './assets/images/world/water.png' } alt={"Tile"} />
+            case GAME_TILE_TYPE.COAL:
+                return <img className="w-full" src={ './assets/images/world/coal.png' } alt={"Tile"} />
+            default:
+                return <span></span>
+        }
+    }
 
     return <div
-        className={ `w-12 h-12 border-2 px-4 py-2 mx-0.5 cursor-pointer select-none ` + ( state.selected ? `border-amber-700` : `border-amber-400` ) }
-        onClick={ () => setState({...state, selected: !state.selected})}
+        className={ `w-12 h-12 border-2 mx-0.5 cursor-pointer select-none ` + ( props.selected ? `border-indigo-300` : `border-indigo-600` )}
+        onClick={ () => props.setSelected(props.id) }
     >
-        <span>{props.text}</span>
+        { resolveImage() }
     </div>
 }
 
-// export default WorldTile;
 export default WorldTile;
