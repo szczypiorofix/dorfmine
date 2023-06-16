@@ -36,6 +36,7 @@ export const Game = () => {
                 }}
                 text={ ""+item.id } />
             ) }
+
         </div> );
     }
 
