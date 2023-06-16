@@ -13,10 +13,8 @@ export const Game = () => {
             className="px-6 flex flex-row flex-wrap my-0.5"
         >
             { row.row.map( (item: GameTile, index: number) => <WorldTile
-                id={ item.id }
+                tile={ item }
                 key={ "tile_"+index }
-                selected={ item.selected }
-                type={ item.type }
                 setSelected={ (id) => {
                     const tempRows = state.tileRows.map(
                         rowItem => {
@@ -36,7 +34,6 @@ export const Game = () => {
                 }}
                 text={ ""+item.id } />
             ) }
-
         </div> );
     }
 
@@ -62,6 +59,8 @@ export const Game = () => {
                     <div>
                         { state.selectedTile && <div>
                             <p>TYPE: { state.selectedTile.type.toString() }</p>
+                            <p>VALUE: { state.selectedTile.value }</p>
+                            <p>COST: { state.selectedTile.cost }</p>
                         </div>
                         }
                     </div>

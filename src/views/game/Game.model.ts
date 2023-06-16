@@ -11,6 +11,8 @@ export interface GameTile {
     id: number;
     selected: boolean;
     type: GAME_TILE_TYPE;
+    value: number;
+    cost: number;
 }
 
 export interface GameTileRow {
