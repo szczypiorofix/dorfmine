@@ -3,6 +3,7 @@ export enum GAME_TILE_TYPE {
     EMPTY,
     DIRT,
     ROCK,
+    COAL,
     WATER
 
 }
