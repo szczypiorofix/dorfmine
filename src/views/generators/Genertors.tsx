@@ -50,7 +50,7 @@ export const Generators = () => {
     }
 
 
-    const itemPresenation = () => {
+    const showItemDetails = () => {
         if ( !state.randomItem ) {
             return <div></div>
         }
@@ -81,7 +81,7 @@ export const Generators = () => {
                 >WYGENERUJ !</button>
             </div>
             <div className={ `flex flex-col mx-auto space-y-4 font-mono text-white text-sm font-bold leading-6 max-w-md bg-blue-900 rounded-md min-h-full` + ( state.randomItem ? ` m-5 p-5` : `` ) }>
-                {state.randomItem && itemPresenation() }
+                {state.randomItem && showItemDetails() }
             </div>
 		</div>
     )
