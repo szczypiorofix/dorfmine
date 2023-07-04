@@ -1,13 +1,11 @@
 import { useState } from 'react';
 
-export function useLocalStorage<T>( defaultValue: T, objectName: string ): [ T, () => void, () => void ] {
-
+export function useLocalStorage<T>( defaultValue: T, objectName: string ): [ T, ( saveObj: T) => void, () => void, () => void ] {
 
     const [ state, setState ] = useState<T>( defaultValue );
 
-
-    const save = (): void => {
-
+    const save = ( obj: T ): void => {
+        localStorage.setItem( objectName, JSON.stringify( obj ) );
     }
 
 
@@ -17,7 +15,11 @@ export function useLocalStorage<T>( defaultValue: T, objectName: string ): [ T, 
         setState( obj );
     }
 
+    const debug = (): void => {
+        console.dir( state );
+    }
 
-    return [ state, save, load ];
+
+    return [ state, save, load, debug ];
 }
 
