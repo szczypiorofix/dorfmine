@@ -20,6 +20,30 @@ import {WEAPON_MAJOR_TERMS, WEAPON_MINOR_TERMS, WEAPON_NAMES} from "./DefinedNam
 
 class ItemGenerator {
 
+    private static randomItemLevel = (): number => {
+        const rnd = Math.floor( Math.random() * 100 );
+        console.log('rnd:', rnd);
+        if ( rnd >= 50) {
+            if ( rnd >= 75 ) {
+                if (rnd >= 88) {
+                    if (rnd >= 94) {
+                        if (rnd >= 98) {
+                            if (rnd >= 99) {
+                                return 7;
+                            }
+                            return 6;
+                        }
+                        return 5;
+                    }
+                    return 4;
+                }
+                return 3;
+            }
+            return 2;
+        }
+        return 1;
+    }
+
     public static generateNewArmor = (): Armor => {
         return ItemGenerator.addRandomPropertiesToArmor( new Armor() );
     }
@@ -27,6 +51,7 @@ class ItemGenerator {
     private static addRandomPropertiesToArmor( armor: Armor ): Armor  {
         armor.armorType = Math.floor( Math.random() * ( Object.keys(ARMOR_TYPE).length / 2 ) );
         armor.imagePath = this.setArmorImage(armor);
+        armor.level = this.randomItemLevel();
         return armor;
     }
 
@@ -62,6 +87,7 @@ class ItemGenerator {
     private static addRandomPropertiesToWeapon( weapon: Weapon ): Weapon  {
         weapon.weaponType = Math.floor( Math.random() * ( Object.keys(WEAPON_TYPE).length / 2 ) );
         weapon.imagePath = this.setWeaponImage(weapon);
+        weapon.level = this.randomItemLevel();
         return weapon;
     }
 
