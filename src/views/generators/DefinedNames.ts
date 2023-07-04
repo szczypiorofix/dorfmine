@@ -1,44 +1,44 @@
 // Weapon
 
 export enum WEAPON_NAMES {
-    SWORD = "Miecz",
-    DAGGER = "Sztylet",
-    STAFF = "Kostur",
-    AXE = "Topór",
-    FLAIL = "Cep bojowy",
-    TWO_HANDED_SWORD = "Miecz dwuręczny",
-    BOW = "Łuk"
+    SWORD = "Sword",
+    DAGGER = "Dagger",
+    STAFF = "Staff",
+    AXE = "Axe",
+    FLAIL = "Flail",
+    TWO_HANDED_SWORD = "Two-handed sword",
+    BOW = "Bow"
 }
 
 export enum WEAPON_MAJOR_TERMS {
-    VILE = "Złośliwy",
-    CRUEL = "Okrutny",
-    FRIGHTENING = "Przerażający",
-    SINISTER = "Złowieszczy"
+    VILE = "Vile",
+    CRUEL = "Cruel",
+    FRIGHTENING = "Frightening",
+    SINISTER = "Sinister"
 }
 
 
 export enum WEAPON_MINOR_TERMS {
-    FIRE = "Ognisty",
-    FROST = "Zamrażający",
-    SHOCK = "Porażający",
-    TOXIC = "Trujący"
+    FIRE = "Fire",
+    FROST = "Frost",
+    SHOCK = "Shock",
+    POISON = "Poison"
 }
 
 
 // Armor
 
 export enum ARMOR_NAMES {
-    HELMET = "Hełm",
-    CHEST = "Napierśnik",
-    GAUNTLET = "Rękawice",
-    BOOTS = "Buty",
-    SHIELD = "Tarcza"
+    HELMET = "Helmet",
+    CHEST = "Chest",
+    GAUNTLET = "Gauntlets",
+    BOOTS = "Boots",
+    SHIELD = "Shield"
 }
 
 export enum ARMOR_MINOR_TERMS {
-    RESIST_FIRE = "Ognioodporny",
-    RESIST_FROST = "Mrozoodporny",
-    RESIST_SHOCK = "Błyskawicoodporny",
-    RESIST_TOXIC = "Truciznoodporny"
+    RESIST_FIRE = "Resist fire",
+    RESIST_FROST = "Resist frost",
+    RESIST_SHOCK = "Resist shock",
+    RESIST_POISON = "Poison resist"
 }
