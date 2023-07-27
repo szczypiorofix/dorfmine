@@ -1,3 +1,4 @@
+import { Vector2 } from "../../core/Vector2";
 
 export enum GAME_TILE_TYPE {
     EMPTY = "Empty",
@@ -13,6 +14,7 @@ export interface GameTile {
     type: GAME_TILE_TYPE;
     value: number;
     cost: number;
+    pos: Vector2;
 }
 
 export interface GameTileRow {
