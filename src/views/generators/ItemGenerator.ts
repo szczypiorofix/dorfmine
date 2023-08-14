@@ -35,7 +35,6 @@ class ItemGenerator {
 
     private static randomItemLevel = (): number => {
         const rnd = this.getRandom(100);
-        console.log('rnd:', rnd);
         if ( rnd >= 50) {
             if ( rnd >= 75 ) {
                 if (rnd >= 88) {

@@ -5,6 +5,7 @@ import gameInitialState from "./GameInitialState";
 
 
 export const Game = () => {
+
     const [state, setState] = useState<GameState>( gameInitialState );
 
     const resolveView = () => {
@@ -36,7 +37,6 @@ export const Game = () => {
             ) }
         </div> );
     }
-
 
     return <div className="flex flex-col">
         <div>

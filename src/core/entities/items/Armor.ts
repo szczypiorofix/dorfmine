@@ -131,7 +131,6 @@ export const ASSETS_IMAGES_SHOULDER: string[] = [
 
 
 export class Armor extends Item {
-
     public requiredStr: number;
     public armorClass: number;
     public armorType: ARMOR_TYPE;
@@ -143,5 +142,4 @@ export class Armor extends Item {
         this.requiredStr = 0;
         this.armorClass = 0;
     }
-
 }

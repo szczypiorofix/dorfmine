@@ -7,9 +7,7 @@ export enum ITEM_TYPE {
 }
 
 
-
 export abstract class Item {
-
     public ID: number;
     public Name: string;
     public Hash: string;
@@ -17,7 +15,6 @@ export abstract class Item {
     public price: number;
     public itemType: ITEM_TYPE;
     public imagePath: string;
-
 
     protected constructor() {
         this.ID = 0;
@@ -28,6 +25,5 @@ export abstract class Item {
         this.price = 0;
         this.imagePath = "";
     }
-
 
 }
