@@ -3,10 +3,8 @@ import WorldTile from "../../components/WorldTile";
 import { GameState, GameTile, GameTileRow } from "./Game.model";
 import gameInitialState from "./GameInitialState";
 
-
 export const Game = () => {
-
-    const [state, setState] = useState<GameState>( gameInitialState );
+    const [ state, setState] = useState<GameState>( gameInitialState );
 
     const resolveView = () => {
         return state.tileRows.map( (row: GameTileRow, index: number) => <div
@@ -16,11 +14,11 @@ export const Game = () => {
             { row.row.map( (item: GameTile, index: number) => <WorldTile
                 tile={ item }
                 key={ "tile_"+index }
-                setSelected={ (id) => {
-                    const tempRows = state.tileRows.map(
-                        rowItem => {
+                setSelected={ (id: number): void => {
+                    const tempRows: GameTileRow[] = state.tileRows.map(
+                        (rowItem: GameTileRow) => {
                             rowItem.row = rowItem.row.map(
-                                tile => {
+                                (tile: GameTile) => {
                                     tile.selected = id === tile.id;
                                     return tile;
                                 }

@@ -10,5 +10,5 @@ export enum APP_STATE_VIEW {
 
 
 export interface AppState {
-    view: APP_STATE_VIEW
+    view: APP_STATE_VIEW;
 }
