@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { switchView } from "../../redux/reducer/gameStateReducer";
-import { APP_STATE_VIEW } from "../../core/App.model";
+import { switchToMainMenu1Action } from "../../redux/actions/SwitchViewActions";
 
 
 export const Splash = () => {
@@ -10,7 +10,7 @@ export const Splash = () => {
 
     useEffect( () => {
         setTimeout(() => {
-            dispatch( switchView( APP_STATE_VIEW.MAIN_MENU ) ); // loading delay
+            dispatch( switchView( switchToMainMenu1Action ) ); // loading delay
         }, 250);
     }, [ dispatch ]);
 

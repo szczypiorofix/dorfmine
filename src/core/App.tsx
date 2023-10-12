@@ -9,6 +9,7 @@ import { switchView } from '../redux/reducer/gameStateReducer';
 import { Game } from '../views/game/Game';
 import { Morgue } from '../views/morgue/Morgue';
 import { Generators } from '../views/generators';
+import { switchToMainMenu1Action } from "../redux/actions/SwitchViewActions";
 
 
 const App = () => {
@@ -53,7 +54,7 @@ const App = () => {
 						className="h-10 px-6 font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-md border border-slate-200"
 						type="button"
 						aria-label="Switch to Main Menu"
-						onClick={() => dispatch( switchView( APP_STATE_VIEW.MAIN_MENU ) )}
+						onClick={() => dispatch( switchView( switchToMainMenu1Action ) )}
 					>
 						Main menu
 					</button>

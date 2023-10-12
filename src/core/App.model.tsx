@@ -1,4 +1,3 @@
-
 export enum APP_STATE_VIEW {
     SPLASH,
     MAIN_MENU,
@@ -11,4 +10,9 @@ export enum APP_STATE_VIEW {
 
 export interface AppState {
     view: APP_STATE_VIEW;
+}
+
+export interface SwitchPagePayloadAction{
+    view: APP_STATE_VIEW;
+    name: string;
 }
